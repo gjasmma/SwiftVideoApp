@@ -1,0 +1,29 @@
+// MARK: - Test: Video Resolution Check
+("Validate video resolution", .tags(.quality))
+func videoResolution() {
+    let video = Video(fileName: "Camping in the Woods.mov")
+    let expectedResolution = Resolution(width: 1920, height: 1080)
+    #expect(video.resolution == expectedResolution)
+}
+
+// MARK: - Test: Video Playback Status
+@Test(.enabled(if: AppFeatures.isPlaybackEnabled))
+func videoPlaybackStatus() async throws {
+    let video = try #require(await videoLibrary.video(named: "By the Lake"))
+    #expect(video.isPlaying == false)
+}
+
+// MARK: - Test: Video Likes Count
+("Check likes count on video", arguments: ["A Forest"])
+func videoLikes(videoName: String) async throws {
+    let video = try #require(await videoLibrary.video(named: videoName))
+    #expect(video.likes >= 100)
+}
+
+// MARK: - Test: Video Tags Validation
+("Validate video tags", arguments: ["Camping in the Woods"])
+func videoTags(videoName: String) async throws {
+    let video = try #require(await videoLibrary.video(named: videoName))
+    #expect(video.tags.contains("nature"))
+    #expect(video.tags.contains("camping"))
+}
