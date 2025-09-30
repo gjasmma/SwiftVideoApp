@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom component: video card shadow */
+.video-card {
+  @apply bg-white shadow-lg rounded-lg overflow-hidden;
+}
+
+/* Custom utility: aspect ratio 16/9 */
+.aspect-video {
+  aspect-ratio: 16 / 9;
+}
