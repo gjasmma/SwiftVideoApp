@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./styles/tailwind.css" rel="stylesheet" />
+    <title>SwiftVideoApp Dashboard</title>
+  </head>
+  <body class="bg-light font-sans text-gray-800">
+    <!-- Header -->
+    <header class="bg-primary text-white p-6 flex items-center justify-between">
+      <h1 class="text-2xl">SwiftVideoApp</h1>
+      <nav>
+        <a href="#" class="mr-4 hover:underline">Home</a>
+        <a href="#" class="mr-4 hover:underline">Library</a>
+        <a href="#" class="hover:underline">Settings</a>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="p-8">
+      <section class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <!-- Video Card Example -->
+        <div class="video-card">
+          <div class="aspect-video">
+            <img src="thumbnail.jpg" alt="Video Thumbnail" class="w-full h-full object-cover" />
+          </div>
+          <div class="p-4">
+            <h2 class="text-lg font-semibold text-gray-900">A Forest</h2>
+            <p class="text-sm text-gray-600 mt-1">Duration: 2:00</p>
+            <div class="mt-4 flex items-center justify-between">
+              <button class="bg-accent text-white px-4 py-2 rounded hover:bg-red-600">
+                Play
+              </button>
+              <span class="text-gray-500">💬 24 comments</span>
+            </div>
+          </div>
+        </div>
+        <!-- Repeat cards as needed -->
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-white text-center p-4">
+      © 2025 SwiftVideoApp. All rights reserved.
+    </footer>
+  </body>
+</html>
